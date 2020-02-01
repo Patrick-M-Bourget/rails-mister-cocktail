@@ -14,6 +14,19 @@
   </head>
 
   <body>
+     <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Cocktails</a>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/cocktails">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <a class="nav-link" href="/cocktails/new">Create a cocktail <span class="sr-only">(current)</span></a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Discover</button>
+        </form>
+      </nav>
     <%= yield %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
