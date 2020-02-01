@@ -20,13 +20,13 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose.cocktail = @cocktail
     @dose.save
-    redirect_to dose_path(@cocktail)
+    redirect_to cocktail_path(@cocktail)
   end
 
   private
 
   def set_cocktail
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 
   def dose_params
