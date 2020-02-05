@@ -1,14 +1,24 @@
-  <div class="container">
-  <h1>hello from index</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 d-flex flex-row">
 
-  <% @cocktails.each do |cocktail| %>
-  <div class="cocktail-card">
-    <h2><%= cocktail.name %></h2>
-    <%= link_to 'view details', cocktail_path(cocktail)  %>
-    <%= link_to 'delete cocktail', cocktail_path(cocktail), method: :delete %>
+      <% @cocktails.each do |cocktail| %>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= cocktail.name %></h5>
+            <p class="card-text">
 
-  <% end %>
+              <% cocktail.doses.each do |dose| %>
+              <p><%= dose.description %> of <%= dose.ingredient.name %></p>
+              <% end %>
+              </p>
+            <p><%= link_to 'view details', cocktail_path(cocktail)  %></p>
+            <p><%= link_to 'delete cocktail', cocktail_path(cocktail), method: :delete %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    </div>
   </div>
-
-  <%= link_to 'create a new cocktail', new_cocktail_path  %>
 </div>
