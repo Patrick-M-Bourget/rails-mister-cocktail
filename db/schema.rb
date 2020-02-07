@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2020_02_05_015232) do
 
   create_table "doses", force: :cascade do |t|
     t.text "description"
-    t.integer "cocktail_id"
-    t.integer "ingredient_id"
+    t.bigint "cocktail_id"
+    t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cocktail_id"], name: "index_doses_on_cocktail_id"
@@ -59,4 +59,6 @@ ActiveRecord::Schema.define(version: 2020_02_05_015232) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "doses", "cocktails"
+  add_foreign_key "doses", "ingredients"
 end

@@ -5,5 +5,5 @@
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient, collection: Ingredient.all %>
-  <%= f.submit "add a new dose" %>
+  <%= f.submit "add a recipe step" %>
 <% end %>

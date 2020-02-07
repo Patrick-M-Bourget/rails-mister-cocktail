@@ -16,6 +16,7 @@ puts "creating ingredients"
 
 gin = Ingredient.create!(name: "gin")
 to = Ingredient.create!(name: "tonic water")
+Ingredient.create!(name: "bourbon")
 Ingredient.create!(name: "cucumber")
 Ingredient.create!(name: "mint")
 Ingredient.create!(name: "lemon juice")

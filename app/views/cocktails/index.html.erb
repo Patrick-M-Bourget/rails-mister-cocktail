@@ -6,14 +6,14 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title"><%= cocktail.name %></h5>
+            <%= cl_image_tag cocktail.photo, class: "card-img-top" %>
             <p class="card-text">
 
-              <% cocktail.doses.each do |dose| %>
-              <p><%= dose.description %> of <%= dose.ingredient.name %></p>
-              <% end %>
+              <!-- <% cocktail.doses.each do |dose| %> -->
+              <!-- <p><%= dose.ingredient.name %></p> -->
+              <!-- <% end %> -->
               </p>
-            <p><%= link_to 'view details', cocktail_path(cocktail)  %></p>
-            <p><%= link_to 'delete cocktail', cocktail_path(cocktail), method: :delete %></p>
+            <p><%= link_to 'view recipe', cocktail_path(cocktail)  %></p>
           </div>
         </div>
       <% end %>
